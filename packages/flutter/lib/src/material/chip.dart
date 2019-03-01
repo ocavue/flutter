@@ -1624,11 +1624,10 @@ class _RawChipState extends State<RawChip> with TickerProviderStateMixin<RawChip
       animationDuration: pressedAnimationDuration,
       shape: shape,
       clipBehavior: widget.clipBehavior,
-      child: InkWell(
+      child: InkResponse(
         onTap: canTap ? _handleTap : null,
         onTapDown: canTap ? _handleTapDown : null,
         onTapCancel: canTap ? _handleTapCancel : null,
-        customBorder: shape,
         child: AnimatedBuilder(
           animation: Listenable.merge(<Listenable>[selectController, enableController]),
           builder: (BuildContext context, Widget child) {
